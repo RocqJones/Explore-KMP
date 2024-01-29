@@ -37,6 +37,8 @@ Each Kotlin Multiplatform project includes three modules:
 - **iosApp** is an Xcode project that builds into an iOS application. It depends on and uses the shared module as an iOS framework. The shared module can be used as a regular framework or as a CocoaPods dependency, based on what you've chosen for iOS framework distribution. For now, we focus on regular framework dependency.
 
 - The shared module consists of three source sets: `androidMain`, `commonMain`, and `iosMain`. Source set is a Gradle concept for a number of files logically grouped together where each group has its own dependencies. In Kotlin Multiplatform, different source sets in a shared module can target different platforms
+![image](https://github.com/RocqJones/Explore-KMP/assets/32324500/c2a391da-e4b7-4294-9302-71ba4c02e4e7)
+
 - The common source set uses common Kotlin code, and platform source sets use Kotlin code specific to each target. Kotlin/JVM is used for `androidMain` and Kotlin/Native for `iosMain`:
 ![image](https://github.com/RocqJones/Explore-KMP/assets/32324500/b51713c6-9174-4ac2-8e73-59509d59fc5a)
 
