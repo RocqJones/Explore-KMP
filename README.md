@@ -44,6 +44,37 @@ Each Kotlin Multiplatform project includes three modules:
 
 - When the shared module is built into an Android library, common Kotlin code is treated as Kotlin/JVM. When it is built into an iOS framework, common Kotlin is treated as Kotlin/Native
 
+## Understanding Platform - `expect` and `actual`.
+Take a look at from `commonMain`:
+```Kotlin
+interface Platform {
+    val name: String
+}
+
+expect fun getPlatform(): Platform
+```
+- The `expect` instructs the Kotlin compiler that the implementation must exist in both `androidMain` and `iosMain` folders. `Platform` is similar to an abstract class in kt.
+- The `actual` instructs the Kotlin compiler the actual platform-based code to return. In this case, the features from each platform are independent of their respective platform.
+
+Android:
+```Kotlin
+class AndroidPlatform : Platform {
+    override val name: String = "Android ${android.os.Build.VERSION.SDK_INT}"
+}
+
+actual fun getPlatform(): Platform = AndroidPlatform()
+```
+iOS:
+```Kotlin
+import platform.UIKit.UIDevice
+
+class IOSPlatform: Platform {
+    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+}
+
+actual fun getPlatform(): Platform = IOSPlatform()
+```
+
 
 ## Resources.
 1. [Official KMM overview.](https://kotlinlang.org/docs/multiplatform.html)
