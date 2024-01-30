@@ -30,7 +30,7 @@ $ kdoctor
 - Your response should be as follows. In case you run into an issue with `Cocoapods` for the Apple Silicon Chip [please check this resource and follow the steps](https://stackoverflow.com/questions/64901180/how-to-run-cocoapods-on-apple-silicon-m1/66556339#66556339).
 ![image](https://github.com/RocqJones/Explore-KMP/assets/32324500/70c224c6-5636-4c8f-86cd-228171adacb6)
 
-## project structure
+## Project structure
 Each Kotlin Multiplatform project includes three modules:
 - **shared** is a Kotlin module that contains the logic common for both Android and iOS applications – the code you share between platforms. It uses Gradle as the build system to help automate your build process.
 - **androidApp** is a Kotlin module that builds into an Android application. It uses Gradle as the build system. The `androidApp` module depends on and uses the shared module as a regular Android library.
