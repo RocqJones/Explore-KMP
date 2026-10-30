@@ -1,5 +1,5 @@
 # Explore-KMP
-Kotlin Multiplatform(KMP) Masterclass - KMM
+Kotlin Multiplatform(KMP) Masterclass
 
 ## Delve into:
 - Master iOS &amp; Android app development with KMP
